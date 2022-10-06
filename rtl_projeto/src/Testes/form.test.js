@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 import renderWithRouter from './FunctionTest.js/renderWithRoute'
-// import userEvent from '@testing-library/user-event'
+import userEvent from '@testing-library/user-event'
 import Form from '../Formulario/Form'
 
 describe('Testa o componente Form', () => {
@@ -52,5 +52,20 @@ describe('Testa o componente Form', () => {
     })
 
     expect(linkToBack).toBeInTheDocument();
+  })
+})
+
+describe('Verifica a navegação do componente Form para o componente Home', () => {
+  it('Testa a navegação do componente Form para o componente Home', () => {
+    const { history } = renderWithRouter(<Form />)
+
+    const linkToBack = screen.getByRole('link', {
+      name: /voltar/i
+    })
+
+    userEvent.click(linkToBack);
+  
+    console.log(history.location.pathname)
+    expect(history.location.pathname).toBe("/");
   })
 })

@@ -69,8 +69,7 @@ describe('Verifica a navegação de rotas do componente Home', () => {
     })   
 
     userEvent.click(homeFromPokeApi); 
-    // console.log(history.location.pathname)   
-    expect(history.location.pathname).toBe('/pokeapi')
-    
+
+    expect(history.location.pathname).toBe('/pokeapi')    
  })
 })

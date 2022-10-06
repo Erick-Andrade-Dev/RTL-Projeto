@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import './App.css';
 import Form from './Formulario/Form';
 import Home from './Pages/Home';
+import NotFound from './Pages/NotFound';
 import Pokemon from './PokeApi/Pokemon';
 
 
@@ -15,6 +16,7 @@ export default class App extends Component {
           <Route exact path='/' component= { Home } />
           <Route path='/form' component= { Form } />        
           <Route path='/pokeapi' component= { Pokemon } />     
+          <Route path='*' component= { NotFound } /> 
         </Switch>
       </div>
     )

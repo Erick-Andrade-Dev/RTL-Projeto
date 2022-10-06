@@ -1,6 +1,6 @@
 import {screen} from '@testing-library/react'
 import renderWithRouter from './FunctionTest.js/renderWithRoute'
-// import userEvent from '@testing-library/user-event'
+import userEvent from '@testing-library/user-event'
 import Pokemon from '../PokeApi/Pokemon'
 
 describe('Testa a renderização dos elementos no componente Pokemon', () => {
@@ -43,5 +43,18 @@ describe('Testa a renderização dos elementos no componente Pokemon', () => {
     })
 
     expect(btnPokeApi).toBeInTheDocument();
+  })
+})
+
+describe('Testa a navegação do componente Pokemon para o componente Home', () => {
+  it('Verifica a navegação para o componente Home', () => {
+    const { history } = renderWithRouter(<Pokemon />)
+
+    const backToHome = screen.getByRole('link', {
+      name: /voltar/i
+    })
+
+    userEvent.click(backToHome)
+    expect(history.location.pathname).toBe("/")
   })
 })

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class Textarea extends Component {
   render() {
-    const { name , id , cols , rows, placeholder, className } = this.props
+    const { name , id , cols , rows, placeholder, className, onChange } = this.props
     return(
       <div>
         <textarea 
@@ -12,6 +12,7 @@ export default class Textarea extends Component {
           cols={cols} 
           rows={rows} 
           placeholder={placeholder}
+          onChange = { onChange }
         >          
         </textarea>
       </div>

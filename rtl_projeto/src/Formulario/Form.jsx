@@ -12,6 +12,7 @@ export default class Form extends Component {
       fullName:'',
       email:'',
       password:'',
+      textarea: '',
       checkbox:false,
     }
   }
@@ -30,6 +31,7 @@ export default class Form extends Component {
       fullName:'',
       email:'',
       password:'',
+      textarea: '',
       checkbox:false,
     })
   }
@@ -91,11 +93,12 @@ export default class Form extends Component {
           rows='5'
           placeholder='Digite aqui!'
           className='textarea-form'
+          onChange = { this.handleChange }
           />
         </label>
         <Button 
           className = 'button-form'
-          type = 'button'
+          type = 'submit'
           onClick = {this.handleClick}          
         />   
         <Link to='/' className='link-form'>Voltar</Link>  
