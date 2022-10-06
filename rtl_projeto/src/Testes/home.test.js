@@ -1,7 +1,8 @@
-import { screen } from '@testing-library/react'
+import { screen, act } from '@testing-library/react'
 import renderWithRouter from './FunctionTest.js/renderWithRoute'
 import userEvent from '@testing-library/user-event'
 import Home from '../Pages/Home'
+import App from '../App'
 
 describe('Verifica a renderização dos elementos no componente Home', () => {
   it('Verifica a renderização do título', () => {
@@ -71,5 +72,5 @@ describe('Verifica a navegação de rotas do componente Home', () => {
     userEvent.click(homeFromPokeApi); 
 
     expect(history.location.pathname).toBe('/pokeapi')    
- })
+ })  
 })
