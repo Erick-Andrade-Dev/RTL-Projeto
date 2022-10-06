@@ -1,17 +1,47 @@
 import {screen} from '@testing-library/react'
 import renderWithRouter from './FunctionTest.js/renderWithRoute'
 // import userEvent from '@testing-library/user-event'
-import Form from '../Formulario/Form'
 import Pokemon from '../PokeApi/Pokemon'
 
-describe('Testa o componente Pokemon', () => {
-  it('Verfica se o nome do pokemon é renderizado', () => {
-    renderWithRouter( <Pokemon/> )
+describe('Testa a renderização dos elementos no componente Pokemon', () => {
+  it('Verfica se o nome do pokemon é renderizado', async() => {
+    renderWithRouter(<Pokemon />)
 
-    const namePokemon = screen.getByRole('heading', {
-      name: /nome: mewtwo/i
+    const namePokemon = await screen.findByRole('heading', {
+      name: /nome: mewtwo/i,
+      level: 1
     })
 
     expect(namePokemon).toBeInTheDocument();
   })  
+
+  it('Verifica se o tipo do pokemon é renderizado', async() => {
+    renderWithRouter(<Pokemon/>)
+
+    const typePokemon = await screen.findByRole('heading', {
+      name: /tipo: psychic/i
+    })
+
+    expect(typePokemon).toBeInTheDocument();                                                            
+  })           
+
+  it('Verifica se a imagem do pokemon é renderizada', async () => {
+    renderWithRouter(<Pokemon />)
+
+    const imagemPokeApi = await screen.findByRole('img', {
+      name: /pokemon/i
+    })
+
+    expect(imagemPokeApi).toBeInTheDocument();
+  })
+
+  it('Verifica se o botão de voltar é renderizado', () => {
+    renderWithRouter(<Pokemon />)
+
+    const btnPokeApi = screen.getByRole('link', {
+      name: /voltar/i
+    })
+
+    expect(btnPokeApi).toBeInTheDocument();
+  })
 })
