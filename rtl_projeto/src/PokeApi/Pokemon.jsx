@@ -34,7 +34,7 @@ export default class Pokemon extends React.Component {
   render(){
     const { name, type, image} = this.state
     return(
-      <div className="container-pokeApi">           
+      <div className="container-pokeApi">         
         <h1 className="title-pokeapi">{`Nome: ${name}`}</h1>
         <h2 className="subtitle-pokeapi">{`Tipo: ${type}`}</h2>
         <img 

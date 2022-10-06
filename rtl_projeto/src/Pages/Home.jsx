@@ -6,7 +6,7 @@ export default class Home extends React.Component {
     return(
       <div className="container-home">
         <h1 className="title-homepage">Deseja concorrer a uma viagem dos sonhos?</h1>
-        <section className="home-section"> 
+        <section className="home-section" data-testid = 'carrossel'> 
           <div className="container-image"> 
             <div className="galery-wrap">
               <div className="galery"> 
