@@ -2,13 +2,13 @@ import React from "react";
 
 export default class Button extends React.Component {
   render(){
-    const { type, onClick } = this.props
+    const { type, onClick, className } = this.props
     return(
       <div className="button-container">
         <button 
           type={type} 
           onClick={onClick} 
-          className= 'button-form'
+          className= {className}
         >Concorrer!         
         </button>       
       </div>
