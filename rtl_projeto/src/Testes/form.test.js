@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 import renderWithRouter from './FunctionTest.js/renderWithRoute'
-import userEvent from '@testing-library/user-event'
+// import userEvent from '@testing-library/user-event'
 import Form from '../Formulario/Form'
 
 describe('Testa o componente Form', () => {
